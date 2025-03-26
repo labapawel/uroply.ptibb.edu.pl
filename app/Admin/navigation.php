@@ -34,6 +34,14 @@ return [
         'url'   => route('admin.information'),
     ],
 
+    // Add this to your existing navigation items
+    [
+        'title' => 'Users',
+        'icon' => 'fa fa-users',
+        'priority' => 100,
+        'model' => \App\Models\User::class,
+    ],
+
     // Examples
     // [
     //    'title' => 'Content',
@@ -43,13 +51,13 @@ return [
     //
     //        // or
     //
-    //        (new Page(\App\User::class))
-    //            ->setPriority(100)
-    //            ->setIcon('fas fa-users')
-    //            ->setUrl('users')
-    //            ->setAccessLogic(function (Page $page) {
-    //                return auth()->user()->isSuperAdmin();
-    //            }),
+        //    (new Page(\App\User::class))
+        //        ->setPriority(100)
+        //        ->setIcon('fas fa-users')
+        //        ->setUrl('users')
+        //        ->setAccessLogic(function (Page $page) {
+        //            return auth()->user()->isSuperAdmin();
+        //        }),
     //
     //        // or
     //

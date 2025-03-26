@@ -53,18 +53,43 @@ class User extends Authenticatable
     }
     
     /**
-     * Check if user is admin.
+     * Check if user has a specific permission
+     * 
+     * @param int $permission
+     * @return bool
+     */
+    public function hasPermission($permission)
+    {
+        return ($this->permissions & $permission) === $permission;
+    }
+
+    /**
+     * Check if user is a regular user
+     * 
+     * @return bool
+     */
+    public function isUser()
+    {
+        return $this->hasPermission(1);
+    }
+
+    /**
+     * Check if user is an admin
+     * 
+     * @return bool
      */
     public function isAdmin()
     {
-        return $this->permission  & (1<< 1) == (1<< 1);
+        return $this->hasPermission(2);
     }
-    
+
     /**
-     * Check if user is super admin.
+     * Check if user is a superadmin
+     * 
+     * @return bool
      */
     public function isSuperAdmin()
     {
-        return $this->permission & (1<< 2) == (1<< 2);
+        return $this->hasPermission(4);
     }
 }

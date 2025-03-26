@@ -19,10 +19,6 @@ return new class extends Migration
             $table->time('end_time'); // Godzina zakończenia pracy
             $table->timestamps();
             
-            // Dodajmy ograniczenie na godziny
-            $table->check('start_time >= "06:00:00" AND end_time <= "22:00:00"');
-            $table->check('start_time < end_time');
-            
             // Unikalny dzień tygodnia dla danego użytkownika
             $table->unique(['user_id', 'day_of_week']);
         });
