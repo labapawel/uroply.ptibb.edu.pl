@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'welcome' => 'Witaj w aplikacji do zarządzania urlopami',
+    'login' => 'Logowanie',
+    'register' => 'Rejestracja',
+    'email' => 'Adres e-mail',
+    'password' => 'Hasło',
+    'remember_me' => 'Zapamiętaj mnie',
+    'forgot_password' => 'Zapomniałeś hasła?',
+    'name' => 'Imię i nazwisko',
+    'confirm_password' => 'Potwierdź hasło',
+    'dashboard' => 'Panel główny',
+    'you_are_logged_in' => 'Jesteś zalogowany!',
+    'logout' => 'Wyloguj',
+    'vacation_management' => 'Zarządzanie urlopami',
+    'submit' => 'Wyślij',
+    'cancel' => 'Anuluj',
+    'back' => 'Powrót',
+    'save' => 'Zapisz',
+    'delete' => 'Usuń',
+    'edit' => 'Edytuj',
+    'view' => 'Podgląd',
+    'create' => 'Utwórz',
+    'search' => 'Szukaj',
+    'actions' => 'Akcje',
+];
