@@ -60,7 +60,7 @@ class User extends Authenticatable
      */
     public function hasPermission($permission)
     {
-        return ($this->permissions & $permission) === $permission;
+        return ($this->permission & $permission) === $permission;
     }
 
     /**
@@ -90,6 +90,7 @@ class User extends Authenticatable
      */
     public function isSuperAdmin()
     {
+        // dd($this);
         return $this->hasPermission(4);
     }
 }

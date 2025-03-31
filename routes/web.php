@@ -15,8 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('strony.index');
+})->name('home');
+Route::get('/a', function () {
+    return view('strony.index1');
+})->name('home1');
+Route::get('/site/{url}', function ($url) {
+    return view('strony.index2', ['url' => $url]);
+})->name('home2');
+
+Route::get('/test', [App\Http\Controllers\TestController::class, 'test'])->name('test');
+
 
 // Dodanie trasy do zmiany języka
 Route::get('language/{locale}', function ($locale) {
@@ -35,5 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+
 
 require __DIR__.'/auth.php';
