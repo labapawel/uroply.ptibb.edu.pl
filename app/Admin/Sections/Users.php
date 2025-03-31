@@ -78,7 +78,7 @@ class Users extends Section implements Initializable
             '4' => 'SuperAdmin',
             
         ]);
-        $pola[] = \AdminFormElement::weeklycalendar('workingHours', 'Kalendarz')->setEndHour(22);
+        $pola[] = \AdminFormElement::weeklycalendar('calendar', 'Kalendarz')->setEndHour(22);
         return  \AdminForm::panel()->addBody($pola);
     }
 
