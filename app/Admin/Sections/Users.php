@@ -79,6 +79,7 @@ class Users extends Section implements Initializable
             '4' => 'SuperAdmin',
         
         ]);
+<<<<<<< HEAD
 
         $pola[] =  \AdminFormElement::weeklycalendar('calendar', 'Kalendarz')
             ->setStartHour(7)
@@ -89,6 +90,9 @@ class Users extends Section implements Initializable
             // ->setEndHour(15)
             // ->setReadonly(auth()->user()->role != 1)
             // ->setValidationRules('required');
+=======
+        $pola[] = \AdminFormElement::weeklycalendar('calendar', 'Kalendarz')->setEndHour(22);
+>>>>>>> f39c37cfb99805f0574e36fd13c7466b052d683b
         return  \AdminForm::panel()->addBody($pola);
     }
 

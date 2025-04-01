@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1235775fbd45bd9dc74d312086ced725",
+    "content-hash": "f4e586942042adb863fe9e35cef6afe2",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -2004,6 +2004,97 @@
             "time": "2020-09-09T12:34:05+00:00"
         },
         {
+            "name": "labapawel/admin",
+            "version": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/labapawel/admin.git",
+                "reference": "c43d5862a7a311fab64a8d5721cb22ed4abc2063"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/labapawel/admin/zipball/c43d5862a7a311fab64a8d5721cb22ed4abc2063",
+                "reference": "c43d5862a7a311fab64a8d5721cb22ed4abc2063",
+                "shasum": ""
+            },
+            "require": {
+                "barryvdh/laravel-ide-helper": ">=2.4",
+                "davejamesmiller/laravel-breadcrumbs": ">=4.0",
+                "doctrine/dbal": ">=2.3",
+                "erusev/parsedown": "1.*",
+                "ext-json": "*",
+                "kodicms/laravel-assets": "0.*",
+                "kodicomponents/navigation": "0.* || ~1.0",
+                "kodicomponents/support": "0.*",
+                "laravel/framework": ">=5.5",
+                "laravelcollective/html": ">=5.5",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "mockery/mockery": ">=0.9",
+                "orchestra/testbench": ">=3.5",
+                "phpunit/phpunit": ">=7.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SleepingOwl\\Admin\\Providers\\SleepingOwlServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-development": "5.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SleepingOwl\\Admin\\": "src/",
+                    "SleepingOwl\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sleeping Owl",
+                    "email": "owl.sleeping@yahoo.com"
+                },
+                {
+                    "name": "Pavel Buchnev",
+                    "email": "butschster@gmail.com"
+                },
+                {
+                    "name": "Dave Gabrielyan",
+                    "email": "aioslike@gmail.com"
+                },
+                {
+                    "name": "TheArdent",
+                    "email": "oleksii.yaryi@gmail.com"
+                },
+                {
+                    "name": "Daan",
+                    "email": "daan@ukr.net"
+                }
+            ],
+            "description": "Administrative interface builder for Laravel.",
+            "homepage": "http://sleepingowladmin.ru",
+            "keywords": [
+                "admin",
+                "administrator",
+                "crud",
+                "laravel",
+                "panel"
+            ],
+            "support": {
+                "issues": "https://github.com/LaravelRUS/SleepingOwlAdmin/issues",
+                "source": "https://github.com/LaravelRUS/SleepingOwlAdmin"
+            },
+            "time": "2025-03-31T18:17:10+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v10.48.29",
             "source": {
@@ -2533,96 +2624,6 @@
             },
             "abandoned": "spatie/laravel-html",
             "time": "2023-04-25T02:46:11+00:00"
-        },
-        {
-            "name": "laravelrus/sleepingowl",
-            "version": "9.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LaravelRUS/SleepingOwlAdmin.git",
-                "reference": "7fe32729ff6b1b564323e2ef522eb38e85833913"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LaravelRUS/SleepingOwlAdmin/zipball/7fe32729ff6b1b564323e2ef522eb38e85833913",
-                "reference": "7fe32729ff6b1b564323e2ef522eb38e85833913",
-                "shasum": ""
-            },
-            "require": {
-                "barryvdh/laravel-ide-helper": ">=2.4",
-                "davejamesmiller/laravel-breadcrumbs": ">=4.0",
-                "doctrine/dbal": ">=2.3",
-                "erusev/parsedown": "1.*",
-                "ext-json": "*",
-                "kodicms/laravel-assets": "0.*",
-                "kodicomponents/navigation": "0.* || ~1.0",
-                "kodicomponents/support": "0.*",
-                "laravel/framework": ">=5.5",
-                "laravelcollective/html": ">=5.5",
-                "php": ">=7.1.3"
-            },
-            "require-dev": {
-                "mockery/mockery": ">=0.9",
-                "orchestra/testbench": ">=3.5",
-                "phpunit/phpunit": ">=7.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "SleepingOwl\\Admin\\Providers\\SleepingOwlServiceProvider"
-                    ]
-                },
-                "branch-alias": {
-                    "dev-development": "5.6.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SleepingOwl\\Admin\\": "src/",
-                    "SleepingOwl\\Tests\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sleeping Owl",
-                    "email": "owl.sleeping@yahoo.com"
-                },
-                {
-                    "name": "Pavel Buchnev",
-                    "email": "butschster@gmail.com"
-                },
-                {
-                    "name": "Dave Gabrielyan",
-                    "email": "aioslike@gmail.com"
-                },
-                {
-                    "name": "TheArdent",
-                    "email": "oleksii.yaryi@gmail.com"
-                },
-                {
-                    "name": "Daan",
-                    "email": "daan@ukr.net"
-                }
-            ],
-            "description": "Administrative interface builder for Laravel.",
-            "homepage": "http://sleepingowladmin.ru",
-            "keywords": [
-                "admin",
-                "administrator",
-                "crud",
-                "laravel",
-                "panel"
-            ],
-            "support": {
-                "issues": "https://github.com/LaravelRUS/SleepingOwlAdmin/issues",
-                "source": "https://github.com/LaravelRUS/SleepingOwlAdmin"
-            },
-            "time": "2021-12-19T20:17:43+00:00"
         },
         {
             "name": "league/commonmark",
@@ -9495,7 +9496,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

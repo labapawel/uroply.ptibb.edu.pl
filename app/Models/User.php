@@ -49,7 +49,7 @@ class User extends Authenticatable
      */
     public function workingHours()
     {
-        return $this->hasMany(WorkingHours::class);
+        return $this->hasMany(WorkingHours::class,'user_id', 'id');
     }
     
     /**
@@ -60,7 +60,7 @@ class User extends Authenticatable
      */
     public function hasPermission($permission)
     {
-        return ($this->permissions & $permission) === $permission;
+        return ($this->permission & $permission) === $permission;
     }
 
     /**
@@ -83,6 +83,31 @@ class User extends Authenticatable
         return $this->hasPermission(2);
     }
 
+    public function getCalendarAttrige()
+    {
+        return $this->workingHours;
+    }
+
+    /**
+     * Set the working hours for the user.
+     * 
+     * @param array $workingHours
+     * @return void
+     */
+    public function setCalendarAttribute(array $workingHours)
+    {
+        $this->workingHours()->delete();
+
+            // dd($workingHours);
+        foreach ($workingHours as $k=>$workingHour) {
+            $workingHours[$k]['user_id'] = $this->id;
+        //   //  $item = new WorkingHours($workingHour);
+        //     // $item->user_id = $this->id;
+            
+        }
+        $this->workingHours()->createMany($workingHours);
+    }
+
     /**
      * Check if user is a superadmin
      * 
@@ -90,6 +115,7 @@ class User extends Authenticatable
      */
     public function isSuperAdmin()
     {
+        // dd($this);
         return $this->hasPermission(4);
     }
 }

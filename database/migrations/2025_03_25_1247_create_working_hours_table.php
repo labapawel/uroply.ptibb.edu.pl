@@ -14,13 +14,12 @@ return new class extends Migration
         Schema::create('working_hours', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->tinyInteger('day_of_week'); // 1-7 (poniedziałek - niedziela)
-            $table->time('start_time'); // Godzina rozpoczęcia pracy
-            $table->time('end_time'); // Godzina zakończenia pracy
+            $table->tinyInteger('day'); // 1-7 (poniedziałek - niedziela)
+            $table->time('hour'); // Godzina rozpoczęcia pracy
             $table->timestamps();
             
             // Unikalny dzień tygodnia dla danego użytkownika
-            $table->unique(['user_id', 'day_of_week']);
+            $table->unique(['user_id', 'day','hour']);
         });
     }
 

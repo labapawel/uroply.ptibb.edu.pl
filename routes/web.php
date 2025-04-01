@@ -18,6 +18,7 @@ Route::get('/', function () {
     return redirect('/admin/');
 });
 
+
 // Dodanie trasy do zmiany języka`
 Route::get('language/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'pl'])) {
@@ -35,5 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+
 
 require __DIR__.'/auth.php';

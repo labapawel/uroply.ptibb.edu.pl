@@ -16,20 +16,12 @@ class WorkingHours extends Model
      */
     protected $fillable = [
         'user_id',
-        'day_of_week',
-        'start_time',
-        'end_time',
+        'day',
+        'hour',
+      
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'start_time' => 'datetime:H:i:s',
-        'end_time' => 'datetime:H:i:s',
-    ];
+  
 
     /**
      * Get the user that owns the working hours.
