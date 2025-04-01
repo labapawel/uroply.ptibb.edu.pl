@@ -83,9 +83,16 @@ class User extends Authenticatable
         return $this->hasPermission(2);
     }
 
-    public function getCalendarAttrige()
+    public function getCalendarAttribute()
     {
-        return $this->workingHours;
+        // dd($this);
+        $calendar = $this->workingHours()->get()->map(function ($item) {
+            return [
+                'day' => $item->day,
+                'hour' => $item->hour,
+            ];
+        })->toArray();
+        return json_encode($calendar, true);
     }
 
     /**

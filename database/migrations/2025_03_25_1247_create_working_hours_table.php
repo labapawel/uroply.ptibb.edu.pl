@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->tinyInteger('day'); // 1-7 (poniedziałek - niedziela)
-            $table->time('hour'); // Godzina rozpoczęcia pracy
+            $table->tinyInteger('hour'); // Godzina rozpoczęcia pracy (0-23)
             $table->timestamps();
             
             // Unikalny dzień tygodnia dla danego użytkownika
