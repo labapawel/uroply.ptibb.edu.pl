@@ -14,7 +14,7 @@ class Users extends Section implements Initializable
      * @var string
      */
     protected $title ;
-    protected $checkAccess = false;
+    protected $checkAccess = true;
 
     public function initialize() {
         $this->title =  __('lang.title.users');
@@ -40,11 +40,11 @@ class Users extends Section implements Initializable
             ])
             ->setDisplaySearch(true)
             ->paginate(20);
-            // if (auth()->user()->isAdmin()) {
-            //     $display->setApply(function ($query) {
-            //         $query->where('id', auth()->id());
-            //     });
-            // }
+            if (auth()->user()->isUser()) {
+                $display->setApply(function ($query) {
+                    $query->where('id', auth()->id());
+                });
+            }
      
         return $display;    
     }
@@ -52,7 +52,7 @@ class Users extends Section implements Initializable
     public function isDeletable($model)
         {
             // Tylko administratorzy mogą usuwać rekordy
-            // return auth()->user()->isAdmin;
+            return auth()->user()->isAdmin();
             return true;
         }
 
@@ -65,13 +65,17 @@ class Users extends Section implements Initializable
     {
         
         $pola = [
-            \AdminFormElement::text('name', 'Nazwa')->required(),
-            \AdminFormElement::text('email', 'Email')->required()->addValidationRule('email')//->setReadonly(auth()->user()->role != 1)
+            \AdminFormElement::text('name', 'Nazwa')->required()->setReadonly(auth()->user()->isUser()),
+            \AdminFormElement::text('email', 'Email')->required()->addValidationRule('email')->setReadonly(auth()->user()->isUser())
             ,
 
         ];
 
         $pola[] = \AdminFormElement::password('password', 'Hasło');
+
+        if(auth()->user()->isAdmin()){
+
+    
 
         $pola[]=             \AdminFormElement::select('permission', 'Rola', [
             '1' => 'User',
@@ -83,6 +87,7 @@ class Users extends Section implements Initializable
         $pola[] =  \AdminFormElement::weeklycalendar('calendar', 'Kalendarz')
             ->setStartHour(7)
             ->setEndHour(19);
+         }
         return  \AdminForm::panel()->addBody($pola);
     }
 

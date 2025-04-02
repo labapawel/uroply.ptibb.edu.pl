@@ -102,9 +102,11 @@ class User extends Authenticatable
      * @return void
      */
     public function setCalendarAttribute(array $workingHours)
-    {
+    {  
+        // dd($workingHours);
         $this->workingHours()->delete();
-        if( count($workingHours) == 0) {
+        if( count($workingHours) != 0) {
+          
             $this->workingHours()->createMany($workingHours);
         }
 }

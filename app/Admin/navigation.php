@@ -35,12 +35,15 @@ return [
     ],
 
     // Add this to your existing navigation items
-    [
-        'title' => 'Users',
-        'icon' => 'fa fa-users',
-        'priority' => 100,
-        'model' => \App\Models\User::class,
-    ],
+    // [
+    //     'title' => 'Users',
+    //     'icon' => 'fa fa-users',
+    //     'priority' => 100,
+    //     'model' => \App\Models\User::class,
+    //     'accessLogic' => function (Page $page) {
+    //         return true;
+    //     },
+    // ],
 
     // Examples
     // [
@@ -51,13 +54,13 @@ return [
     //
     //        // or
     //
-        //    (new Page(\App\User::class))
-        //        ->setPriority(100)
-        //        ->setIcon('fas fa-users')
-        //        ->setUrl('users')
-        //        ->setAccessLogic(function (Page $page) {
-        //            return auth()->user()->isSuperAdmin();
-        //        }),
+           (new Page(\App\Models\User::class))
+               ->setPriority(100)
+               ->setIcon('fas fa-users')
+            //    ->setUrl('users')
+               ->setAccessLogic(function (Page $page) {
+                   return true;
+               }),
     //
     //        // or
     //
