@@ -104,16 +104,10 @@ class User extends Authenticatable
     public function setCalendarAttribute(array $workingHours)
     {
         $this->workingHours()->delete();
-
-            // dd($workingHours);
-        foreach ($workingHours as $k=>$workingHour) {
-            $workingHours[$k]['user_id'] = $this->id;
-        //   //  $item = new WorkingHours($workingHour);
-        //     // $item->user_id = $this->id;
-            
+        if( count($workingHours) == 0) {
+            $this->workingHours()->createMany($workingHours);
         }
-        $this->workingHours()->createMany($workingHours);
-    }
+}
 
     /**
      * Check if user is a superadmin

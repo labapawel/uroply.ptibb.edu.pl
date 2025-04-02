@@ -83,12 +83,6 @@ class Users extends Section implements Initializable
         $pola[] =  \AdminFormElement::weeklycalendar('calendar', 'Kalendarz')
             ->setStartHour(7)
             ->setEndHour(19);
-            // ->setHelpText('Kliknij na godziny, aby zaznaczyć zakres. Możesz odznaczać poszczególne godziny.');
-
-            // ->setStartHour(7)
-            // ->setEndHour(15)
-            // ->setReadonly(auth()->user()->role != 1)
-            // ->setValidationRules('required');
         return  \AdminForm::panel()->addBody($pola);
     }
 
