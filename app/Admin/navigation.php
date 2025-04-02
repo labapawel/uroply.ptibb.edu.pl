@@ -28,11 +28,11 @@ return [
         'url'   => route('admin.dashboard'),
     ],
 
-    [
-        'title' => 'Information',
-        'icon'  => 'fas fa-info-circle',
-        'url'   => route('admin.information'),
-    ],
+    // [
+    //     'title' => 'Information',
+    //     'icon'  => 'fas fa-info-circle',
+    //     'url'   => route('admin.information'),
+    // ],
 
     // Add this to your existing navigation items
     // [
@@ -54,13 +54,25 @@ return [
     //
     //        // or
     //
+
+     [
+        'title' => 'Ustawienia',
+        'icon'  => 'fas fa-cogs',
+        'pages' => [
            (new Page(\App\Models\User::class))
                ->setPriority(100)
                ->setIcon('fas fa-users')
-            //    ->setUrl('users')
                ->setAccessLogic(function (Page $page) {
                    return true;
                }),
+           (new Page(\App\Models\daysOff::class))
+               ->setPriority(101)
+               ->setIcon('fas fa-calendar-alt')
+               ->setAccessLogic(function (Page $page) {
+                   return auth()->user()->isAdmin();
+               }),
+        ]
+    ],
     //
     //        // or
     //

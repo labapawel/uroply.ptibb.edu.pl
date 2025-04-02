@@ -12,6 +12,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
+        $schedule->command('days-off:add '.Date("Y"))
+             ->yearlyOn(1, 1, '01:02');
         // $schedule->command('inspire')->hourly();
     }
 
