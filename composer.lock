@@ -2082,12 +2082,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/labapawel/admin.git",
-                "reference": "6c1a843d42c6589c86efbb752b2272785c6e6712"
+                "reference": "58c80da068aefd0eab673000aaf51bc6cf1a2263"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/labapawel/admin/zipball/6c1a843d42c6589c86efbb752b2272785c6e6712",
-                "reference": "6c1a843d42c6589c86efbb752b2272785c6e6712",
+                "url": "https://api.github.com/repos/labapawel/admin/zipball/58c80da068aefd0eab673000aaf51bc6cf1a2263",
+                "reference": "58c80da068aefd0eab673000aaf51bc6cf1a2263",
                 "shasum": ""
             },
             "require": {
@@ -2165,7 +2165,7 @@
                 "issues": "https://github.com/LaravelRUS/SleepingOwlAdmin/issues",
                 "source": "https://github.com/LaravelRUS/SleepingOwlAdmin"
             },
-            "time": "2025-04-02T15:33:21+00:00"
+            "time": "2025-04-03T07:36:34+00:00"
         },
         {
             "name": "laravel/framework",
@@ -9577,6 +9577,6 @@
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
