@@ -77,35 +77,36 @@ class Users extends Section implements Initializable
 
     
 
-        $pola[]=             \AdminFormElement::select('permission', 'Rola', [
+        $pola[]=             \AdminFormElement::multiselect('permission', 'Rola', [
             '1' => 'User',
             '2' => 'Admin',
             '4' => 'SuperAdmin',
         
         ]);
 
-        // $pola[]=        \AdminFormElement::daterange('data_od', 'data_do')
-        // ->setLabel('Zakres dat rezerwacji')
-        // ->setStartLabel('Data przyjazdu')
-        // ->setEndLabel('Data wyjazdu')
-        // ->setHolidays([
-        //     '2025-04-18', // Wielki Piątek
-        //     '2025-04-21', // Wielkanoc
-        //     '2025-05-01', // Święto Pracy
-        //     '2025-05-03', // Święto Konstytucji
-        //     '2025-06-08', // Boże Ciało
-        //     '2025-08-15', // Wniebowzięcie NMP
-        //     '2025-11-01', // Wszystkich Świętych
-        //     '2025-11-11', // Święto Niepodległości
-        //     '2025-12-25', // Boże Narodzenie
-        //     '2025-12-26', // Św. Szczepana
-        // ])
-        // ->disablePastDates(true);
+        $pola[]=        \AdminFormElement::daterange('data_od', 'data_do')
+        ->setLabel('Zakres dat rezerwacji')
+        ->setStartLabel('Data przyjazdu')
+        ->setEndLabel('Data wyjazdu')
+        ->setHolidays([
+            '2025-04-18', // Wielki Piątek
+            '2025-04-21', // Wielkanoc
+            '2025-05-01', // Święto Pracy
+            '2025-05-03', // Święto Konstytucji
+            '2025-06-08', // Boże Ciało
+            '2025-08-15', // Wniebowzięcie NMP
+            '2025-11-01', // Wszystkich Świętych
+            '2025-11-11', // Święto Niepodległości
+            '2025-12-25', // Boże Narodzenie
+            '2025-12-26', // Św. Szczepana
+        ])
+        ->disablePastDates(true);
 
-        $pola[] =  \AdminFormElement::weeklycalendar('calendar', 'Kalendarz')
-            ->setStartHour(7)
-            ->setEndHour(19);
-         }
+        // $pola[] =  \AdminFormElement::weeklycalendar('calendar', 'Kalendarz')
+        //     ->setStartHour(7)
+        //     ->setEndHour(19);
+
+        }
         return  \AdminForm::panel()->addBody($pola);
     }
 
