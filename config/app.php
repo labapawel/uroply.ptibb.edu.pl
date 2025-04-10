@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         // App\Providers\WeeklyCalendarServiceProvider::class,
+        // \SleepingOwl\Admin\Providers\AdminServiceProvider::class,
     ])->toArray(),
 
     /*
