@@ -77,7 +77,7 @@ class Users extends Section implements Initializable
 
     
 
-        $pola[]=             \AdminFormElement::select('permission', 'Rola', [
+        $pola[]=             \AdminFormElement::multiselect('permission', 'Rola', [
             '1' => 'User',
             '2' => 'Admin',
             '4' => 'SuperAdmin',

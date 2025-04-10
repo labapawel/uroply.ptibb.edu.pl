@@ -2085,12 +2085,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/labapawel/admin.git",
+<<<<<<< HEAD
                 "reference": "e5991ae0c21af977fc3edd597fad914ced442991"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/labapawel/admin/zipball/e5991ae0c21af977fc3edd597fad914ced442991",
                 "reference": "e5991ae0c21af977fc3edd597fad914ced442991",
+=======
+                "reference": "43ec8bc7b09eb6e8c48e4dcb7ea8a57cd6259dc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/labapawel/admin/zipball/43ec8bc7b09eb6e8c48e4dcb7ea8a57cd6259dc2",
+                "reference": "43ec8bc7b09eb6e8c48e4dcb7ea8a57cd6259dc2",
+>>>>>>> c51d7a927ea7c0e645f7435f9ff3f3436e4621f2
                 "shasum": ""
             },
             "require": {
@@ -2168,7 +2177,11 @@
                 "issues": "https://github.com/LaravelRUS/SleepingOwlAdmin/issues",
                 "source": "https://github.com/LaravelRUS/SleepingOwlAdmin"
             },
+<<<<<<< HEAD
             "time": "2025-04-10T19:20:30+00:00"
+=======
+            "time": "2025-04-10T06:58:41+00:00"
+>>>>>>> c51d7a927ea7c0e645f7435f9ff3f3436e4621f2
         },
         {
             "name": "laravel/framework",
