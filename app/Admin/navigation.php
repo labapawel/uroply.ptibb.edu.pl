@@ -54,6 +54,12 @@ return [
     //
     //        // or
     //
+    (new Page(\App\Models\Holiday::class))
+    // ->setPriority(1)
+    ->setIcon('fas fa-calendar-alt')
+    ->setAccessLogic(function (Page $page) {
+        return auth()->user()->isUser();
+    }),
 
      [
         'title' => 'Ustawienia',

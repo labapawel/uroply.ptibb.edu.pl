@@ -70,7 +70,7 @@ class User extends Authenticatable
      */
     public function isUser()
     {
-        return $this->hasPermission(1);
+        return $this->hasPermission(1) || $this->isAdmin();
     }
 
     /**
