@@ -80,8 +80,9 @@ class User extends Authenticatable
      */
     public function isAdmin()
     {
-        return $this->hasPermission(2);
+        return $this->hasPermission(2) || $this->hasPermission(4);
     }
+
 
     public function getCalendarAttribute()
     {

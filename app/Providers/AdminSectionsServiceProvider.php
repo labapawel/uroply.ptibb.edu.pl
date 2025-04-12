@@ -15,6 +15,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
     protected $sections = [
         \App\Models\User::class => 'App\Admin\Sections\Users',
         \App\Models\daysOff::class => 'App\Admin\Sections\daysOffs',
+        \App\Models\HolidayType::class => 'App\Admin\Sections\HolidayTypes',
     ];
 
     protected $widgets = [

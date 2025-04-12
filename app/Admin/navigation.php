@@ -71,6 +71,12 @@ return [
                ->setAccessLogic(function (Page $page) {
                    return auth()->user()->isAdmin();
                }),
+           (new Page(\App\Models\HolidayType::class))
+               ->setPriority(102)
+               ->setIcon('fas fa-calendar-alt')
+               ->setAccessLogic(function (Page $page) {
+                   return auth()->user()->isSuperAdmin();
+               }),
         ]
     ],
     //

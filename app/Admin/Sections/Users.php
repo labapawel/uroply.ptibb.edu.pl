@@ -74,39 +74,41 @@ class Users extends Section implements Initializable
         $pola[] = \AdminFormElement::password('password', 'Hasło');
 
         if(auth()->user()->isAdmin()){
-
+        $perm = [
+            1 => 'Użytkownik',
+            2 => 'Administrator',
+        ];    
+        if(auth()->user()->isSuperAdmin()) {
+            $perm[4] = 'Super Administrator';
+        }
     
 
-        $pola[]=             \AdminFormElement::select('permission', 'Rola', [
-            '1' => 'User',
-            '2' => 'Admin',
-            '4' => 'SuperAdmin',
-        
-        ]);
+        $pola[]=             \AdminFormElement::select('permission', 'Rola', $perm);
 
-        $pola[]=  \AdminFormElement::daterange('reservation_period', 'Okres rezerwacji')
-        ->setNumberOfMonths(3)
-        ->setNumberOfColumns(3)
-        ->setFormat('DD.MM.YYYY')
-        ->setTodayAsMinDate()
-        // ->setMaxDate(Carbon::now()->addYear())
-        ->setLocale('pl-PL')
-        // ->setLockedDays([
-        //     Carbon::now()->addDays(5)->format('Y-m-d'),  // Blokujemy konkretny dzień
-        //     Carbon::now()->addDays(10)->format('Y-m-d'),
+
+        // $pola[]=  \AdminFormElement::daterange('reservation_period', 'Okres rezerwacji')
+        // ->setNumberOfMonths(3)
+        // ->setNumberOfColumns(3)
+        // ->setFormat('DD.MM.YYYY')
+        // ->setTodayAsMinDate()
+        // // ->setMaxDate(Carbon::now()->addYear())
+        // ->setLocale('pl-PL')
+        // // ->setLockedDays([
+        // //     Carbon::now()->addDays(5)->format('Y-m-d'),  // Blokujemy konkretny dzień
+        // //     Carbon::now()->addDays(10)->format('Y-m-d'),
+        // // ])
+        // ->setAutoApply(true)
+        // ->setShowTooltip(true)
+        // ->setTooltipText([
+        //     'one' => 'dzień',
+        //     'other' => 'dni'
         // ])
-        ->setAutoApply(true)
-        ->setShowTooltip(true)
-        ->setTooltipText([
-            'one' => 'dzień',
-            'other' => 'dni'
-        ])
-        ->setHelpText('Wybierz okres rezerwacji. Dni oznaczone na czerwono są niedostępne.')
-        ->required();
+        // ->setHelpText('Wybierz okres rezerwacji. Dni oznaczone na czerwono są niedostępne.')
+        // ->required();
 
-        // $pola[] =  \AdminFormElement::weeklycalendar('calendar', 'Kalendarz')
-        //     ->setStartHour(7)
-        //     ->setEndHour(19);
+        $pola[] =  \AdminFormElement::weeklycalendar('calendar', 'Kalendarz')
+            ->setStartHour(7)
+            ->setEndHour(19);
          }
         return  \AdminForm::panel()->addBody($pola);
     }
