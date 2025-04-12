@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+
 use SleepingOwl\Admin\Providers\AdminSectionsServiceProvider as ServiceProvider;
+use SleepingOwl\Admin\Contracts\Widgets\WidgetsRegistryInterface; // Dodajemy import
 
 class AdminSectionsServiceProvider extends ServiceProvider
 {
@@ -12,7 +14,19 @@ class AdminSectionsServiceProvider extends ServiceProvider
      */
     protected $sections = [
         \App\Models\User::class => 'App\Admin\Sections\Users',
+        \App\Models\daysOff::class => 'App\Admin\Sections\daysOffs',
+        \App\Models\HolidayType::class => 'App\Admin\Sections\HolidayTypes',
     ];
+
+    protected $widgets = [
+        \App\Admin\Widgets\NavigationUserBlock::class,
+    ];
+
+    public function registerViews( WidgetsRegistryInterface $widgetsRegistry ) {
+        foreach ( $this->widgets as $widget ) {
+            $widgetsRegistry->registerWidget( $widget );
+        }
+    }
 
     /**
      * Register sections.
@@ -23,7 +37,8 @@ class AdminSectionsServiceProvider extends ServiceProvider
     public function boot(\SleepingOwl\Admin\Admin $admin)
     {
     	//
-
+        $this->app->call( [ $this, 'registerViews' ] );
+        $this->registerPolicies( 'App\\Admin\\Policies\\' );
         parent::boot($admin);
     }
 }

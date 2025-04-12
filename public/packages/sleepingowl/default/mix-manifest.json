@@ -1,7 +1,12 @@
 {
-    "/js/vue.js": "/js/vue.js?id=5c1c9e95a728bb21b838",
-    "/js/admin-app.js": "/js/admin-app.js?id=afa8686058cb9d491abf",
-    "/js/admin-app-dev.js": "/js/admin-app-dev.js?id=95adc66ab63d937c507d",
-    "/js/modules.js": "/js/modules.js?id=a9070f80a8fed47cdfad",
-    "/css/admin-app.css": "/css/admin-app.css?id=14d7506ac98cad254452"
+    "/js/vue.js": "/js/vue.js?id=dab6bc7e937af14694905c16ee637756",
+<<<<<<< HEAD
+    "/js/admin-app.js": "/js/admin-app.js?id=7ffe1441c2bbf328dfb09e6fb86d02ec",
+    "/js/admin-app-dev.js": "/js/admin-app-dev.js?id=87feded4a485a881ce16ae6f37ddfe86",
+=======
+    "/js/admin-app.js": "/js/admin-app.js?id=ce88fc97840edd35bebad4592eda93bc",
+    "/js/admin-app-dev.js": "/js/admin-app-dev.js?id=2999bb44f48c7782ddb393125a7be8b8",
+>>>>>>> c51d7a927ea7c0e645f7435f9ff3f3436e4621f2
+    "/js/modules.js": "/js/modules.js?id=a9070f80a8fed47cdfad8a9ed0393aaa",
+    "/css/admin-app.css": "/css/admin-app.css?id=918bf9ed1efa8a8066be27cdd4a0c1bc"
 }
